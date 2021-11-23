@@ -1,24 +1,83 @@
-# README
+# usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+| Column             | Type   | Option      |
+| ------------------ | ------ | ----------- |
+| email              | string | primary key |
+| encrypted_password | string | null: false |
+| nickname           | string | null: false |
+| gender             | string | null: false |
+| birthday           | date   | null: false |
 
-Things you may want to cover:
+## Association
 
-* Ruby version
+- has_many :nutrients
+- has_many :create_foods
+- has_many :create_quizzes
+- has_many :posts
+- has_many :comments
 
-* System dependencies
+# nutrientsテーブル
 
-* Configuration
+| Column     | Type       | Option                         |
+| ---------- | ---------- | ------------------------------ |
+| calorie    | integer    |                                |
+| protein    | integer    |                                |
+| carbo      | integer    |                                |
+| lipid      | integer    |                                |
+| user       | references | null: false, foreign_key: true |
 
-* Database creation
+## Association
 
-* Database initialization
+- belongs_to :user
 
-* How to run the test suite
+# create_foodsテーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column     | Type       | Option                         |
+| ---------- | ---------- | ------------------------------ |
+| calorie    | integer    |                                |
+| protein    | integer    |                                |
+| carbo      | integer    |                                |
+| lipid      | integer    |                                |
+| user       | references | null: false, foreign_key: true |
 
-* Deployment instructions
+## Association
 
-* ...
+- belongs_to :user
+
+# create_quizzesテーブル
+
+| Column      | Type       | Option                         |
+| ----------- | ---------- | ------------------------------ |
+| quiz        | text       | null: false                    |
+| answer      | text       | null: false                    |
+| explanation | text       | null: false                    |
+| user        | references | null: false, foreign_key: true |
+
+## Association
+
+- belongs_to :user
+
+# postsテーブル
+
+| Column    | Type       | Option                         |
+| --------- | ---------- | ------------------------------ |
+| content   | text       | null: false                    |
+| user      | references | null: false, foreign_key: true |
+
+## Association
+
+- has_many :comments
+- belongs_to :user
+
+# commentsテーブル
+
+| Column    | Type       | Option                         |
+| --------- | ---------- | ------------------------------ |
+| comment   | text       | null: false                    |
+| user      | references | null: false, foreign_key: true |
+| post      | references | null: false, foreign_key: true |
+
+## Association
+
+- belongs_to :user
+- belongs_to :post
