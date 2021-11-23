@@ -11,7 +11,8 @@
 ## Association
 
 - has_many :nutrients
-- has_many :quizzes
+- has_many :create_foods
+- has_many :create_quizzes
 - has_many :posts
 - has_many :comments
 
@@ -19,7 +20,6 @@
 
 | Column     | Type       | Option                         |
 | ---------- | ---------- | ------------------------------ |
-| aim        | text       |                                |
 | calorie    | integer    |                                |
 | protein    | integer    |                                |
 | carbo      | integer    |                                |
@@ -30,7 +30,21 @@
 
 - belongs_to :user
 
-# quizzesテーブル
+# create_foodsテーブル
+
+| Column     | Type       | Option                         |
+| ---------- | ---------- | ------------------------------ |
+| calorie    | integer    |                                |
+| protein    | integer    |                                |
+| carbo      | integer    |                                |
+| lipid      | integer    |                                |
+| user       | references | null: false, foreign_key: true |
+
+## Association
+
+- belongs_to :user
+
+# create_quizzesテーブル
 
 | Column      | Type       | Option                         |
 | ----------- | ---------- | ------------------------------ |
