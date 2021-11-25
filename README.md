@@ -19,27 +19,21 @@
 | Column     | Type       | Option                         |
 | ---------- | ---------- | ------------------------------ |
 | name       | string     |                                |
-| calorie    | float      |                                |
 | protein    | float      |                                |
-| carbo      | float      |                                |
-| lipid      | float      |                                |
+| calorie    | float      |                                |
 | user       | references | null: false, foreign_key: true |
 
 ## Association
 
 - belongs_to :user
 
-# foodsテーブル
+# ingredientsテーブル
 
 | Column     | Type       | Option                         |
 | ---------- | ---------- | ------------------------------ |
 | name       | string     | null: false                    |
-| calorie    | float      | null: false                    |
-| protein    | float      | null: false                    |
-| carbo      | float      | null: false                    |
-| lipid      | float      | null: false                    |
-
-## Association
+| protein    | float      |                                |
+| calorie    | float      |                                |
 
 
 # quizzesテーブル
@@ -49,9 +43,7 @@
 | quiz        | text       | null: false                    |
 | answer      | text       | null: false                    |
 | explanation | text       | null: false                    |
-| user        | references | null: false, foreign_key: true |
 
-## Association
 
 
 # postsテーブル
