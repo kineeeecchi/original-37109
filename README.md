@@ -1,50 +1,48 @@
 # usersテーブル
 
-| Column             | Type   | Option      |
-| ------------------ | ------ | ----------- |
-| email              | string | primary key |
-| encrypted_password | string | null: false |
-| nickname           | string | null: false |
-| gender             | string | null: false |
-| birthday           | date   | null: false |
+| Column             | Type    | Option      |
+| ------------------ | ------- | ----------- |
+| email              | string  | primary key |
+| encrypted_password | string  | null: false |
+| nickname           | string  | null: false |
+| gender             | integer | null: false |
+| birthday           | date    | null: false |
 
 ## Association
 
-- has_many :nutrients
-- has_many :create_foods
-- has_many :create_quizzes
+- has_many :managements
 - has_many :posts
 - has_many :comments
 
-# nutrientsテーブル
+# managementテーブル
 
 | Column     | Type       | Option                         |
 | ---------- | ---------- | ------------------------------ |
-| calorie    | integer    |                                |
-| protein    | integer    |                                |
-| carbo      | integer    |                                |
-| lipid      | integer    |                                |
+| name       | string     |                                |
+| calorie    | float      |                                |
+| protein    | float      |                                |
+| carbo      | float      |                                |
+| lipid      | float      |                                |
 | user       | references | null: false, foreign_key: true |
 
 ## Association
 
 - belongs_to :user
 
-# create_foodsテーブル
+# foodsテーブル
 
 | Column     | Type       | Option                         |
 | ---------- | ---------- | ------------------------------ |
-| calorie    | integer    |                                |
-| protein    | integer    |                                |
-| carbo      | integer    |                                |
-| lipid      | integer    |                                |
-| user       | references | null: false, foreign_key: true |
+| name       | string     | null: false                    |
+| calorie    | float      | null: false                    |
+| protein    | float      | null: false                    |
+| carbo      | float      | null: false                    |
+| lipid      | float      | null: false                    |
 
 ## Association
 
-- belongs_to :user
 
-# create_quizzesテーブル
+# quizzesテーブル
 
 | Column      | Type       | Option                         |
 | ----------- | ---------- | ------------------------------ |
@@ -55,7 +53,6 @@
 
 ## Association
 
-- belongs_to :user
 
 # postsテーブル
 
