@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root to: "nutrients#index"
+  devise_for :users
+  root to: "managements#index"
 end
