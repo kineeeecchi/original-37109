@@ -29,11 +29,12 @@
 
 # ingredientsテーブル
 
-| Column     | Type       | Option                         |
-| ---------- | ---------- | ------------------------------ |
-| name       | string     | null: false                    |
-| protein    | float      |                                |
-| calorie    | float      |                                |
+| Column      | Type       | Option                         |
+| ----------- | ---------- | ------------------------------ |
+| name        | string     | null: false                    |
+| protein     | float      | null: false                    |
+| calorie     | float      | null: false                    |
+| category_id | integer    | null: false                    |
 
 
 # quizzesテーブル
