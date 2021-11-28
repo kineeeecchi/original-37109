@@ -1,0 +1,101 @@
+<h1>タンパク質量リスト</h1>
+
+<%= link_to "摂取記録を追加する", "#", class:"post" %>
+
+
+<div class="ingredients">
+<div class="ingredient-category">
+  <div class="category-name">
+    <h2>肉</h2> 
+  </div>
+  <% @ingredients.where(category_id: 2).each do |ingredient| %>
+    <div class="ingredient-info">
+      <div class="ingredient-data">
+        <%= ingredient.name %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.protein}g" %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.calorie}kcal" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="ingredient-category">
+  <div class="category-name">
+    <h2>肉</h2> 
+  </div>
+  <% @ingredients.where(category_id: 2).each do |ingredient| %>
+    <div class="ingredient-info">
+      <div class="ingredient-data">
+        <%= ingredient.name %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.protein}g" %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.calorie}kcal" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="ingredient-category">
+  <div class="category-name">
+    <h2>肉</h2> 
+  </div>
+  <% @ingredients.where(category_id: 2).each do |ingredient| %>
+    <div class="ingredient-info">
+      <div class="ingredient-data">
+        <%= ingredient.name %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.protein}g" %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.calorie}kcal" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="ingredient-category">
+  <div class="category-name">
+    <h2>魚介</h2> 
+  </div>
+  <% @ingredients.where(category_id: 4).each do |ingredient| %>
+    <div class="ingredient-info">
+      <div class="ingredient-data">
+        <%= ingredient.name %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.protein}g" %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.calorie}kcal" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="ingredient-category">
+  <div class="category-name">
+    <h2>魚介加工品</h2> 
+  </div>
+  <% @ingredients.where(category_id: 6).each do |ingredient| %>
+    <div class="ingredient-info">
+      <div class="ingredient-data">
+        <%= ingredient.name %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.protein}g" %>
+      </div>
+      <div class="ingredient-data">
+        <%= "#{ingredient.calorie}kcal" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>

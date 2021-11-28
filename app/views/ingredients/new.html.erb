@@ -1,0 +1,12 @@
+<div class="contents row">
+  <div class="container">
+    <h2>Add ingredients</h2>
+    <%= form_with(model: @ingredient, local: true) do |f| %>
+      <%= f.text_field :name, placeholder: "put food name", autofocus: true %>
+      <%= f.collection_select(:category_id, Category.all, :id, :name ,{}, {class:"category-select"}) %>
+      <%= f.text_field :protein, placeholder: "put protein" %>
+      <%= f.text_field :calorie, placeholder: "put calorie" %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
