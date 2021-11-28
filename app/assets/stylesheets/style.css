@@ -82,6 +82,7 @@ form input[type="submit"]:hover {
 }
 .title h1 {
 margin: 20px 0;
+font-size: 27px;
 }
 
 .nav-item {
@@ -89,3 +90,23 @@ margin: 20px 0;
 }
 /*ヘッダー部分のタイトルと項目*/
 
+/* ingredients newページ*/
+.category-select {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+.ingredients {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.ingredient-info {
+  margin: 5px;
+  padding: 5px 15px;
+  border: 1px solid darkslategrey;
+}
