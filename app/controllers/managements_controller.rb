@@ -4,6 +4,8 @@ class ManagementsController < ApplicationController
     if user_signed_in?
     @protein = Management.where(user_id: current_user.id).where("created_at >= ?", Date.today).all.sum(:protein)
     @calorie = Management.where(user_id: current_user.id).where("created_at >= ?", Date.today).all.sum(:calorie)
+
+    @posts = Post.all
     else
       
     end
@@ -15,7 +17,7 @@ class ManagementsController < ApplicationController
 
   def create
     Management.create(management_params)
-    redirect_to new_management_path
+    redirect_to root_path
   end
 
   private

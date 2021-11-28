@@ -1,0 +1,16 @@
+<div class="">
+  <div class="">
+    <div class="">
+      <%= post.user.nickname %>
+    </div>
+    <div class="">
+      <%= post.created_at %>
+    </div>
+  </div>
+  <div class="">
+    <div class="">
+      <%= post.content %>
+    </div>
+    <%= image_tag post.image.variant(resize: '300x300'), class: '' if post.image.attached? %>
+  </div>
+</div>
