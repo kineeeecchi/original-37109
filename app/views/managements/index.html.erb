@@ -1,3 +1,17 @@
-<div class="title">
-  <h1>タンパク質で疲れない体をつくろう！</h1>
+<div class="container">
+  <div class="title">
+    <h1>タンパク質で疲れない体をつくろう！</h1>
+  </div>
+    <% if user_signed_in? %>
+    <div class="ingredient-info">
+      <h2>今日の摂取量</h2>
+      <div class="ingredient-data">
+        <%= "タンパク質：#{@protein.round(1)}/g 目標：/日" %>
+      </div>
+      <div class="ingredient-data">
+        <%= "カロリー：#{@calorie.round(1)}/kcal" %>
+      </div>
+    </div>
+    <% end %>
+  <%= link_to "追加", new_management_path%>
 </div>

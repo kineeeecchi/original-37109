@@ -1,0 +1,11 @@
+<div class="contents row">
+  <div class="container">
+    <h2>Add ingredients</h2>
+    <%= form_with(model: @management, local: true) do |f| %>
+      <%= f.collection_select(:name, Ingredient.all, :name, :name ,{include_blank: true}, {class:"category-select"}) %>
+      <%= f.collection_select(:protein, Ingredient.all, :protein, :name ,{include_blank: true}, {class:"category-select"}) %>
+      <%= f.collection_select(:calorie, Ingredient.all, :calorie, :name ,{include_blank: true}, {class:"category-select"}) %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
