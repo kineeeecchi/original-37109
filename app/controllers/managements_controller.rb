@@ -5,7 +5,8 @@ class ManagementsController < ApplicationController
     @protein = Management.where(user_id: current_user.id).where("created_at >= ?", Date.today).all.sum(:protein)
     @calorie = Management.where(user_id: current_user.id).where("created_at >= ?", Date.today).all.sum(:calorie)
 
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
+    
     else
       
     end

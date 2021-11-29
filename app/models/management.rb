@@ -6,4 +6,5 @@ class Management < ApplicationRecord
     validates :protein
     validates :calorie
   end
+
 end
