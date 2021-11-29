@@ -1,10 +1,11 @@
 <div class="">
+<%= link_to post_path(post.id) do %>
   <div class="">
     <div class="">
       <%= post.user.nickname %>
     </div>
     <div class="">
-      <%= post.created_at %>
+      <%= post.created_at.to_s(:datetime_jp) %>
     </div>
   </div>
   <div class="">
@@ -13,4 +14,5 @@
     </div>
     <%= image_tag post.image.variant(resize: '300x300'), class: '' if post.image.attached? %>
   </div>
+<% end %>
 </div>
