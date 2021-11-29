@@ -8,6 +8,12 @@ class PostsController < ApplicationController
     Post.create(post_params)
     redirect_to root_path
   end
+
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+  end
   
 
 
