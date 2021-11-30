@@ -1,18 +1,14 @@
-<div class="">
-<%= link_to post_path(post.id) do %>
-  <div class="">
-    <div class="">
+<div class="post-box">
+<%= link_to(post_path(post.id), {class: "post-link"}) do %>
+    <div class="post-name">
       <%= post.user.nickname %>
     </div>
-    <div class="">
+    <div class="post-date">
       <%= post.created_at.to_s(:datetime_jp) %>
     </div>
-  </div>
-  <div class="">
-    <div class="">
+    <div class="post-content">
       <%= post.content %>
     </div>
     <%= image_tag post.image.variant(resize: '300x300'), class: '' if post.image.attached? %>
-  </div>
 <% end %>
 </div>

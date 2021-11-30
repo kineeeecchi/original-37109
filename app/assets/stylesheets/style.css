@@ -75,15 +75,7 @@ form input[type="submit"]:hover {
 
 
 /*ヘッダー部分のタイトルと項目*/
-.title {
-  text-align: center;
-  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
-  color:darkslategrey;
-}
-.title h1 {
-margin: 20px 0;
-font-size: 27px;
-}
+
 
 .nav-item {
   font-weight: bold;
@@ -104,9 +96,4 @@ font-size: 27px;
   margin-top: 20px;
   display: flex;
   justify-content: space-around;
-}
-.ingredient-info {
-  margin: 5px;
-  padding: 5px 15px;
-  border: 1px solid darkslategrey;
 }

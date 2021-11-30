@@ -1,0 +1,39 @@
+.title {
+  text-align: center;
+  font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
+  color:darkslategrey;
+}
+.title h1 {
+margin: 20px 0;
+font-size: 27px;
+font-weight: bold;
+
+}
+
+.today-ingredient {
+  margin: 5px;
+  padding: 15px 15px;
+  background: rgb(203, 233, 247);
+  border-top: solid 8px rgb(7, 187, 241);
+  border-radius: 5px;
+}
+
+.ingredient-data {
+  font-size: 20px;
+  padding-bottom: 7px;
+  color: #666;
+  font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+}
+
+a.btn--yellow {
+  color: white;
+  background-color: #03a7e7;
+  border-bottom: 4px solid #0a75da;
+}
+
+a.btn--yellow:hover {
+  margin-top: 3px;
+  color: white;
+  background: #03a7e7;
+  border-bottom: 2px solid #0a75da;
+}
