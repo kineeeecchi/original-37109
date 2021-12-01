@@ -4,7 +4,7 @@
   color:darkslategrey;
 }
 .title h1 {
-margin: 20px 0;
+margin: 10px 0 25px 0;
 font-size: 27px;
 font-weight: bold;
 
@@ -16,6 +16,11 @@ font-weight: bold;
   background: rgb(203, 233, 247);
   border-top: solid 8px rgb(7, 187, 241);
   border-radius: 5px;
+}
+
+.ingredient h2 {
+  font-size: 20px;
+  margin: 0 0 5px 15px;
 }
 
 .ingredient-data {

@@ -1,10 +1,11 @@
 <div class="container">
   <div class="title">
-    <h1>タンパク質で疲れない体をつくろう</h1>
+    <h1>タンパク質で元気な体を手に入れよう</h1>
   </div>
     <% if user_signed_in? %>
+    <div class="ingredient">
+    <h2>今日の摂取量</h2>
     <div class="today-ingredient">
-      <h2>今日の摂取量</h2>
       <div class="ingredient-data">
         <%= "タンパク質：#{@protein.round(1)}/g 目標：60g/日" %>
       </div>
@@ -12,6 +13,7 @@
         <%= "カロリー：#{@calorie.round(1)}/kcal" %>
       </div>
       <%= link_to("Add", new_management_path, {class: "btn btn--yellow btn--cubic"}) %>
+    </div>
     </div>
 
 
