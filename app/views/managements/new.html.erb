@@ -2,9 +2,9 @@
   <div class="container">
     <h2>Add ingredients</h2>
     <%= form_with(model: @management, local: true) do |f| %>
-      <%= f.collection_select(:name, Ingredient.all, :name, :name ,{include_blank: true}, {class:"category-select"}) %>
-      <%= f.collection_select(:protein, Ingredient.all, :protein, :name ,{include_blank: true}, {class:"category-select"}) %>
-      <%= f.collection_select(:calorie, Ingredient.all, :calorie, :name ,{include_blank: true}, {class:"category-select"}) %>
+      <%= f.text_field :name, placeholder: "put food-name", autofocus: true %>
+      <%= f.text_field :protein, placeholder: "put protein" %>
+      <%= f.text_field :calorie, placeholder: "put calorie" %>
       <%= f.submit "SEND" %>
     <% end %>
   </div>
