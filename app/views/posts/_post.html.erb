@@ -1,14 +1,12 @@
-<div class="post-box">
-<%= link_to(post_path(post.id), {class: "post-link"}) do %>
-    <div class="post-name">
-      <%= post.user.nickname %>
-    </div>
-    <div class="post-date">
-      <%= post.created_at.to_s(:datetime_jp) %>
-    </div>
-    <div class="post-content">
+<div class="post-content">
+  <%= link_to(post_path(post.id), {class: "post-link"}) do %>
+    <%= image_tag post.image.variant(resize: '300x300'), class: '' if post.image.attached? %>
+    <div class="post-info">
       <%= post.content %>
     </div>
-    <%= image_tag post.image.variant(resize: '300x300'), class: '' if post.image.attached? %>
-<% end %>
+    <div class="post-name">
+      <%= "#{post.user.nickname}_#{post.created_at.to_s(:datetime_jp)}" %>
+    </div>
+    <%= link_to "Delete", post_path(post), method: :delete %>
+  <% end %>
 </div>

@@ -1,15 +1,15 @@
 <div class="contents row">
-  <div class="content_post" >
-    <%= @post.created_at.to_s(:datetime_jp) %>
-    <p><%= @post.content %></p>
-    <%= image_tag @post.image.variant(resize: '300x300'), class: '' if @post.image.attached? %>
-    <span class="name">
-      <a href="/users/<%= @post.user.id %>">
-        <span>投稿者</span><%= @post.user.nickname %>
-      </a>
-    </span>
-  </div>
   <div class="container">
+    <div class="post-content">
+      <%= image_tag @post.image.variant(resize: '300x300'), class: '' if @post.image.attached? %>
+      <div class="post-info">
+        <%= @post.content %>
+      </div>
+      <div class="post-name">
+        <%= "#{@post.user.nickname}_#{@post.created_at.to_s(:datetime_jp)}" %>
+      </div>
+      <%= link_to "Delete", post_path(@post), method: :delete %>
+    </div>
     <% if user_signed_in? %>
       <%= form_with(model: [@post, @comment], local: true) do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "3" %>
