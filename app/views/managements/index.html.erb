@@ -2,10 +2,10 @@
   <div class="title">
     <h1>タンパク質で元気な体を手に入れよう</h1>
   </div>
-    <% if user_signed_in? %>
+  <% if user_signed_in? %>
     <div class="ingredient">
     <h2>今日の摂取量</h2>
-    <div class="today-ingredient">
+    <div class="ingredient-wrapper">
       <div class="ingredient-data">
         <%= "タンパク質：#{@protein.round(1)}/g 目標：60g/日" %>
       </div>
@@ -15,19 +15,13 @@
       <%= link_to("Add", new_management_path, {class: "btn btn--yellow btn--cubic"}) %>
     </div>
     </div>
+  <% end %>
 
-
-  <div class="contents row">
-    <%= render partial: 'posts/post', collection: @posts%>
+  <div class="post">
+    <h2>投稿一覧</h2>
+    <div class="post-wrapper">
+      <%= render partial: 'posts/post', collection: @posts%>
+    </div>
   </div>
-   <% end %>
-</div>
-
-
-
-
-
-
-<div class="question">
-  <p> 脂質の多い食材は筋肉をつけるのに不向きである </p>
+   
 </div>
