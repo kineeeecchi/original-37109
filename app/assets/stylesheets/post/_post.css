@@ -1,3 +1,60 @@
 .post-link {
   text-decoration: none;
 }
+
+.post {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.post h2 {
+  color: rgb(80, 78, 78);
+  font-size: 20px;
+  margin: 25px 0 0 15px;
+}
+
+.post-wrapper {
+  margin: 5px 5px 5px 5px;
+  padding: 15px 15px;
+  background: rgb(245, 224, 238);
+  border-top: solid 8px rgb(245, 167, 232);
+  border-radius: 5px;
+}
+/* display: flex; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
+
+
+
+.post-content {
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 15px;
+  text-align: center;
+  border: dotted 2px whitesmoke;
+}
+.post-info {
+  font-size: 15px;
+  color: rgb(80, 78, 78);
+  margin-top: 10px;
+}
+
+.post-name {
+  font-size: 10px;
+  color: rgb(80, 78, 78);
+}
+
+
+/* タブレット表示時 ????????*/
+/* @media (max-width: 1024px) {
+  .post {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .post-content {
+    width: 48%;
+    margin-bottom: 40px;
+  }
+} */

@@ -1,24 +1,25 @@
 .title {
   text-align: center;
   font-family:"Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体";
-  color:darkslategrey;
+  color:darkslategray;
 }
 .title h1 {
 margin: 10px 0 25px 0;
-font-size: 27px;
+font-size: 25px;
 font-weight: bold;
 
 }
 
-.today-ingredient {
+.ingredient-wrapper {
   margin: 5px;
   padding: 15px 15px;
-  background: rgb(203, 233, 247);
-  border-top: solid 8px rgb(7, 187, 241);
+  background: rgb(218, 240, 250);
+  border-top: solid 8px rgb(143, 217, 241);
   border-radius: 5px;
 }
 
 .ingredient h2 {
+  color: rgb(80, 78, 78);
   font-size: 20px;
   margin: 0 0 5px 15px;
 }
@@ -26,19 +27,19 @@ font-weight: bold;
 .ingredient-data {
   font-size: 20px;
   padding-bottom: 7px;
-  color: #666;
+  color: rgb(80, 78, 78);
   font-family: 'Unica One', "Avenir", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro W6", "HIragino Kaku Gothic Pro W6", "HIragino Kaku Gothic Pro", Osaka, Meiryo, "メイリオ", "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
 }
 
 a.btn--yellow {
   color: white;
-  background-color: #03a7e7;
+  background-color: rgb(95, 154, 231);
   border-bottom: 4px solid #0a75da;
 }
 
 a.btn--yellow:hover {
   margin-top: 3px;
   color: white;
-  background: #03a7e7;
+  background: rgb(95, 154, 231);
   border-bottom: 2px solid #0a75da;
 }

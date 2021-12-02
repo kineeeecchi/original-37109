@@ -19,9 +19,68 @@
   *zoom: 1;
 }
 
-body {
-  padding-top: 70px;
+.navbar {
+  height: 70px;
+  padding: 0;
+  width: 100%;
+  background-color: rgb(143, 217, 241);
 }
+
+.navbar ul {
+  /* flexboxでナビゲーションバーを横並び配置する */
+  display: flex;
+  /* 縦幅中央に配置する指定 */
+  align-items: center;
+  /* 横幅中央に配置する指定 */
+  justify-content: center;
+  width: 100%;
+  /* リストスタイルを削除 */
+  list-style: none;
+}
+.navbar ul li {
+  /* ナビゲーションメニュー同士の間隔を指定 */
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.nav-home {
+  color: darkslategray;
+  font-size: 25px;
+  font-weight: 540;
+  font-family: "游ゴシック", "YuGothic";
+  text-decoration: none;
+  /* アニメーション速度を指定 */
+  transition: color 0.3s ease-out;
+}
+
+.nav-home:hover {
+  color:rgb(65, 136, 230);
+}
+
+.nav-item {
+  color: darkslategray;
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "游ゴシック", "YuGothic";
+  text-decoration: none;
+  /* アニメーション速度を指定 */
+  transition: color 0.3s ease-out;
+}
+.nav-item:hover {
+  /* hover後に色を変化させる指定 */
+  color:rgb(65, 136, 230);
+}
+
+
+
+a.navbar-brand {
+  font-size: 28px;
+  font-family: 'Corben', cursive;
+}
+
+/* body {
+  padding-top: 70px;
+} */
 
 h2,
 body {
@@ -59,11 +118,11 @@ form textarea {
 }
 
 form input[type="submit"] {
-  background-color: #57C3E9;
-  border-radius: 20px;
+  background-color: #7bcbe9;
+  border-radius: 15px;
   color: #fff;
   border: 0;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 form input[type="submit"]:hover {
