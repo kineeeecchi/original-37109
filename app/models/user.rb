@@ -13,4 +13,5 @@ class User < ApplicationRecord
   has_many :managements
   has_many :posts
   has_many :comments
+  has_many :goals
 end

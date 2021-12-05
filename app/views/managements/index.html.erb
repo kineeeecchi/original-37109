@@ -1,27 +1,47 @@
 <div class="container">
-  <div class="title">
-    <h1>タンパク質で元気な体を手に入れよう</h1>
-  </div>
   <% if user_signed_in? %>
-    <div class="ingredient">
-    <h2>今日の摂取量</h2>
+  <div class="title">
+    <h2>My goal</h2>
+    <% if @aim.present? %>
+    <p><%= @aim.goal %></p>
+    <% else %>
+    <p>あなたの目標を設定しましょう</p>
+    <% end%>
+  </div>
+  <div class="ingredient">
+    <h2>Intakes for Today</h2>
     <div class="ingredient-wrapper">
-      <div class="ingredient-data">
-        <%= "タンパク質：#{@protein.round(1)}/g 目標：60g/日" %>
+      <div class="ingredient-protein">
+        <p><%= "タンパク質：#{@protein.round(1)}/g" %></p>
+        <% if @aim.present? %>
+        <P><%= "目標：#{@aim.protein}g/日" %></p>
+        <% else %>
+        <P><%= "目標：_未設定_" %></p>
+        <% end %>
       </div>
-      <div class="ingredient-data">
-        <%= "カロリー：#{@calorie.round(1)}/kcal" %>
-      </div>
-      <%= link_to("Add", new_management_path, {class: "btn btn--yellow btn--cubic"}) %>
-    </div>
-    </div>
-  <% end %>
 
+      <div class="ingredient-calorie">
+        <%= "カロリー：#{@calorie.round(1)}/kcal" %>
+        <% if @aim.present? %>
+        <P><%= "必要量：#{@aim.calorie}kcal/日" %></p>
+        <% else %>
+        <P class="nil_calorie"><%= "必要量：_未設定_" %></p>
+        <% end %>
+      </div>
+      <div class="button">
+        <%= link_to("Add Intakes", new_management_path, {class: "btn btn--yellow btn--cubic"}) %>
+        <%= link_to("Add Goal", new_aim_path, {class: "btn btn--yellow btn--cubic"}) %>
+      </div>
+    </div>
+  </div>
   <div class="post">
-    <h2>投稿一覧</h2>
+    <h2>Our posts</h2>
     <div class="post-wrapper">
       <%= render partial: 'posts/post', collection: @posts%>
     </div>
   </div>
-   
+  <% else %>
+    <h2>タンパク質で元気な体を作ろう</h2>
+    <p>Please signup or Login</p>
+  <% end %>
 </div>
