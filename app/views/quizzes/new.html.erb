@@ -1,0 +1,14 @@
+<div class="contents row">
+  <div class="container">
+    <h3>クイズを作成する</h3>
+    <%= form_with(model: @quiz, local: true) do |f| %>
+      <%= f.text_area :question, placeholder: "問題", rows: "6" %>
+      <%= f.text_field :answer_1, placeholder: "回答１" %>
+      <%= f.text_field :answer_2, placeholder: "回答2" %>
+      <%= f.text_field :answer_3, placeholder: "回答3" %>
+      <%= f.text_field :answer_num, placeholder: "正解" %>
+      <%= f.text_area :explain, placeholder: "解説文", rows: "10" %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+</div>
