@@ -1,0 +1,16 @@
+.quiz-title {
+margin-bottom: 15px;
+border-bottom: 4px double #000;
+}
+
+.quiz-question h2{
+  font-size: 20px;
+}
+
+.quiz-answer {
+  list-style: none;
+}
+
+.quiz-button button {
+margin-left: 15px;
+}

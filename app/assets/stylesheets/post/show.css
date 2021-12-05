@@ -1,3 +1,10 @@
+
+.edit_delete {
+  font-size: smaller;
+  padding: 5px 5px 0 0;
+}
+
+
 .comments h4 {
   font-size: 15px;
 }
