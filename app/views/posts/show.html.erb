@@ -8,7 +8,14 @@
       <div class="post-name">
         <%= "#{@post.user.nickname}_#{@post.created_at.to_s(:datetime_jp)}" %>
       </div>
-      <%= link_to "Delete", post_path(@post), method: :delete %>
+      <div class="edit_delete">
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+        <%= link_to('Edit', edit_post_path(@post)) %>
+        <%= link_to("Delete", post_path(@post), method: :delete) %>
+        <% end %>
+      </div>
+
+
     </div>
     <% if user_signed_in? %>
       <%= form_with(model: [@post, @comment], local: true) do |form| %>
@@ -19,10 +26,10 @@
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
     <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+      <h4>＜Comments＞</h4>
       <% @comments.each do |comment| %>
         <p>
-          <strong><%= link_to comment.user.nickname, "#" %>：</strong>
+          <strong><%= comment.user.nickname %>：</strong>
           <%= comment.text %>
         </p>
       <% end %>

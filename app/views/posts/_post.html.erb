@@ -7,6 +7,6 @@
     <div class="post-name">
       <%= "#{post.user.nickname}_#{post.created_at.to_s(:datetime_jp)}" %>
     </div>
-    <%= link_to "Delete", post_path(post), method: :delete %>
+    <%# <%= link_to "Delete", post_path(post), method: :delete %>
   <% end %>
 </div>
