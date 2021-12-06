@@ -13,14 +13,28 @@
 - has_many :managements
 - has_many :posts
 - has_many :comments
+- has_one  :aim
 
-# managementテーブル
+# managementsテーブル
 
 | Column     | Type       | Option                         |
 | ---------- | ---------- | ------------------------------ |
 | name       | string     |                                |
 | protein    | float      |                                |
 | calorie    | float      |                                |
+| user       | references | null: false, foreign_key: true |
+
+## Association
+
+- belongs_to :user
+
+# aimsテーブル
+
+| Column     | Type       | Option                         |
+| ---------- | ---------- | ------------------------------ |
+| goal       | string     |                                |
+| protein    | string     | null: false                    |
+| calorie    | string     |                                |
 | user       | references | null: false, foreign_key: true |
 
 ## Association
