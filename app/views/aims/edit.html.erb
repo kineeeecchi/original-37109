@@ -1,0 +1,11 @@
+<div class="contents row">
+  <div class="container">
+    <h2>Edit your goal</h2>
+    <%= form_with(model: @aim, local: true) do |f| %>
+      <%= f.text_field :goal, placeholder: "目標宣言", autofocus: true %>
+      <%= f.text_field :protein, placeholder: "タンパク質の1日の目標摂取量" %>
+      <%= f.text_field :calorie, placeholder: "1日の必要摂取カロリー" %>
+      <%= f.submit "SEND" %>
+    <% end %>
+  </div>
+</div>

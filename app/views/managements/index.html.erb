@@ -30,7 +30,11 @@
       </div>
       <div class="button">
         <%= link_to("Add Intakes", new_management_path, {class: "btn btn--yellow btn--cubic"}) %>
-        <%= link_to("Add Goal", new_aim_path, {class: "btn btn--yellow btn--cubic"}) %>
+        <% if @aim.present? %>
+          <%= link_to("Edit Goal", edit_aim_path(@aim), {class: "btn btn--yellow btn--cubic"}) %>
+        <% else %>
+          <%= link_to("Add Goal", new_aim_path, {class: "btn btn--yellow btn--cubic"}) %>
+        <% end %>
       </div>
     </div>
   </div>

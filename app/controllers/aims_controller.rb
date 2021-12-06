@@ -10,6 +10,16 @@ class AimsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @aim = Aim.find(params[:id])
+  end
+
+  def update
+    aim = Aim.find(params[:id])
+    aim.update(aim_params)
+    redirect_to root_path
+  end
+
 
   private
 
