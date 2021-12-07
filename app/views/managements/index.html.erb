@@ -21,15 +21,20 @@
       </div>
 
       <div class="ingredient-calorie">
-        <%= "カロリー：#{@calorie.round(1)}/kcal" %>
+        <p><%= "カロリー：#{@calorie.round(1)}/kcal" %></p>
+        <div class="need-calorie">
         <% if @aim.present? %>
         <P><%= "必要量：#{@aim.calorie}kcal/日" %></p>
         <% else %>
-        <P class="nil_calorie"><%= "必要量：_未設定_" %></p>
+        <P><%= "必要量：_未設定_" %></p>
         <% end %>
+        </div>
       </div>
       <div class="button">
         <%= link_to("Add Intakes", new_management_path, {class: "btn btn--yellow btn--cubic"}) %>
+        <% if @management.present? %>
+        <%= link_to("Detail", management_path(@management.ids), {class: "btn btn--yellow btn--cubic"}) %>
+        <% end %>
         <% if @aim.present? %>
           <%= link_to("Edit Goal", edit_aim_path(@aim), {class: "btn btn--yellow btn--cubic"}) %>
         <% else %>
