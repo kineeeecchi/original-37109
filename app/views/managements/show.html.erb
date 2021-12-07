@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="management-detail">
+    <% @managements.each do |management| %>
+      <ul class="detail">
+        <li class="detail-name"><%= management.name %></li>
+        <li><%= "Protein：#{management.protein}" %></li>
+        <li><%= "Calorie：#{management.calorie}" %></li>
+        <li><%= link_to("Delete", management_path(management), method: :delete) %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>

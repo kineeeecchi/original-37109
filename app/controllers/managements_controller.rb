@@ -6,6 +6,7 @@ class ManagementsController < ApplicationController
     @protein = Management.where(user_id: current_user.id).where("created_at >= ?", Date.today).all.sum(:protein)
     @calorie = Management.where(user_id: current_user.id).where("created_at >= ?", Date.today).all.sum(:calorie)
     @aim = Aim.find_by(user_id: current_user.id)
+    @management = Management.all
     # @aim = Aim.where(user_id: current_user.id).order("created_at DESC").limit(1)
     @posts = Post.all.order("created_at DESC")
       
@@ -19,6 +20,16 @@ class ManagementsController < ApplicationController
   def create
     Management.create(management_params)
     redirect_to root_path
+  end
+
+  def show
+    @managements = Management.where(user_id: current_user.id).where("created_at >= ?", Date.today)
+  end
+
+  def destroy
+    management = Management.find(params[:id])
+    management.destroy
+    redirect_to management_path(management.id)
   end
 
   private
