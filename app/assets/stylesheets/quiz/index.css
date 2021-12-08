@@ -3,6 +3,11 @@ margin-bottom: 15px;
 border-bottom: 4px double #000;
 }
 
+.quiz-title h1 {
+  font-size: 26px;
+  text-align: center;
+}
+
 .quiz-question h2{
   font-size: 20px;
 }
@@ -13,4 +18,37 @@ border-bottom: 4px double #000;
 
 .quiz-button button {
 margin-left: 15px;
+}
+
+@media (max-width: 500px) {
+  .quiz-title {
+    margin-bottom: 15px;
+    border-bottom: 4px double #000;
+    }
+
+    .quiz-title h1 {
+      font-size: 18px;
+      text-align: center;
+    }
+    
+    .quiz-question h2{
+      font-size: 14px;
+    }
+    
+    .quiz-answer {
+      list-style: none;
+      font-size: 12px;
+      margin-left: 80px;
+    }
+
+    .quiz-button {
+      display: flex;
+      justify-content: center;
+      margin-left: 5px;
+    }
+    
+    .quiz-button button {
+    margin-right: 12px;
+    font-size: 12px;
+    }
 }
