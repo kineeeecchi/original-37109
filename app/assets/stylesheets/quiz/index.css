@@ -1,6 +1,7 @@
 .quiz-title {
 margin-bottom: 15px;
-border-bottom: 4px double #000;
+padding-bottom: 1px;
+/* border-bottom: 4px solid #000; */
 }
 
 .quiz-title h1 {
@@ -20,10 +21,18 @@ border-bottom: 4px double #000;
 margin-left: 15px;
 }
 
+.explanations {
+  margin: 20px 15px;
+}
+
+.explanations p {
+font-size: 14px;
+margin: 24px 10px;
+}
+
 @media (max-width: 500px) {
   .quiz-title {
     margin-bottom: 15px;
-    border-bottom: 4px double #000;
     }
 
     .quiz-title h1 {
@@ -50,5 +59,14 @@ margin-left: 15px;
     .quiz-button button {
     margin-right: 12px;
     font-size: 12px;
+    }
+
+    .explanations {
+      margin: 12px 6px;
+    }
+    
+    .explanations p {
+    font-size: 9px;
+    margin: 14px 6px;
     }
 }

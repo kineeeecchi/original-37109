@@ -8,17 +8,6 @@
   box-sizing: border-box;
 }
 
-/*Login & Sign up*/
-/* .row {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  margin-bottom: 0;
-  max-width: 650px;
-  *zoom: 1;
-} */
-
 .navbar {
   height: 70px;
   padding: 0;
@@ -40,11 +29,10 @@
 
 .nav-home {
   color: darkslategray;
-  font-size: 25px;
+  font-size: 28px;
   font-weight: 540;
   font-family: "游ゴシック", "YuGothic";
   text-decoration: none;
-  /* アニメーション速度を指定 */
   transition: color 0.3s ease-out;
 }
 
@@ -54,7 +42,7 @@
 
 .nav-item {
   color: darkslategray;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: bold;
   font-family: "游ゴシック", "YuGothic";
   text-decoration: none;
