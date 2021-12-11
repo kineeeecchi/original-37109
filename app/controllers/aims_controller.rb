@@ -6,8 +6,12 @@ class AimsController < ApplicationController
   end
 
   def create
-    Aim.create(aim_params)
-    redirect_to root_path
+    @aim = Aim.new(aim_params)
+    if @aim.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -15,9 +19,12 @@ class AimsController < ApplicationController
   end
 
   def update
-    aim = Aim.find(params[:id])
-    aim.update(aim_params)
-    redirect_to root_path
+    @aim = Aim.find(params[:id])
+    if @aim.update(aim_params)
+    redirect_to root_path(@aim.id)
+    else
+    render :edit
+    end
   end
 
 

@@ -2,6 +2,9 @@
   <div class="container">
     <h2>Add ingredients</h2>
     <%= form_with(model: @management, local: true) do |f| %>
+
+      <%= render "shared/error_messages", model: f.object %>
+
       <%= f.text_field :name, placeholder: "put food-name", autofocus: true %>
       <%= f.text_field :protein, placeholder: "put protein" %>
       <%= f.text_field :calorie, placeholder: "put calorie" %>
@@ -9,3 +12,353 @@
     <% end %>
   </div>
 </div>
+<div class="container">
+  <h1>タンパク質量一覧表(100gあたり)</h1>
+  <% if @ingredients.present? %>
+  <div class="ingredient-charts">
+    <div class="ingredient-chart">
+      <h2>肉</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @meats.each do |meat|%>
+        <tr>
+          <td class="line"><%= meat.name %></td>
+          <td class="line"><%= meat.protein %></td>
+          <td class="line"><%= meat.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>肉加工品</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @processed_meats.each do |processed_meat| %>
+        <tr>
+          <td class="line"><%= processed_meat.name %></td>
+          <td class="line"><%= processed_meat.protein %></td>
+          <td class="line"><%= processed_meat.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>魚介</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @fishes.each do |fish| %>
+        <tr>
+          <td class="line"><%= fish.name %></td>
+          <td class="line"><%= fish.protein %></td>
+          <td class="line"><%= fish.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>海藻</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @seaweeds.each do |seaweed| %>
+        <tr>
+          <td class="line"><%= seaweed.name %></td>
+          <td class="line"><%= seaweed.protein %></td>
+          <td class="line"><%= seaweed.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>魚介加工品</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @processed_fishes.each do |processed_fish| %>
+        <tr>
+          <td class="line"><%= processed_fish.name %></td>
+          <td class="line"><%= processed_fish.protein %></td>
+          <td class="line"><%= processed_fish.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>卵</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @eggs.each do |egg| %>
+        <tr>
+          <td class="line"><%= egg.name %></td>
+          <td class="line"><%= egg.protein %></td>
+          <td class="line"><%= egg.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>いも</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @potatoes.each do |potato| %>
+        <tr>
+          <td class="line"><%= potato.name %></td>
+          <td class="line"><%= potato.protein %></td>
+          <td class="line"><%= potato.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>乳製品</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @dairy_products.each do |dairy_product| %>
+        <tr>
+          <td class="line"><%= dairy_product.name %></td>
+          <td class="line"><%= dairy_product.protein %></td>
+          <td class="line"><%= dairy_product.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>大豆製品</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @soy_products.each do |soy_product| %>
+        <tr>
+          <td class="line"><%= soy_product.name %></td>
+          <td class="line"><%= soy_product.protein %></td>
+          <td class="line"><%= soy_product.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>きのこ</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @mushrooms.each do |mushroom| %>
+        <tr>
+          <td class="line"><%= mushroom.name %></td>
+          <td class="line"><%= mushroom.protein %></td>
+          <td class="line"><%= mushroom.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>豆</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @beans.each do |bean| %>
+        <tr>
+          <td class="line"><%= bean.name %></td>
+          <td class="line"><%= bean.protein %></td>
+          <td class="line"><%= bean.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>果物</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @fruits.each do |fruit| %>
+        <tr>
+          <td class="line"><%= fruit.name %></td>
+          <td class="line"><%= fruit.protein %></td>
+          <td class="line"><%= fruit.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>野菜</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @vegetables.each do |vegetable| %>
+        <tr>
+          <td class="line"><%= vegetable.name %></td>
+          <td class="line"><%= vegetable.protein %></td>
+          <td class="line"><%= vegetable.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>主食</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @staples.each do |staple| %>
+        <tr>
+          <td class="line"><%= staple.name %></td>
+          <td class="line"><%= staple.protein %></td>
+          <td class="line"><%= staple.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>おかず</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @sides.each do |side| %>
+        <tr>
+          <td class="line"><%= side.name %></td>
+          <td class="line"><%= side.protein %></td>
+          <td class="line"><%= side.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>お菓子</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @snacks.each do |snack| %>
+        <tr>
+          <td class="line"><%= snack.name %></td>
+          <td class="line"><%= snack.protein %></td>
+          <td class="line"><%= snack.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>飲み物</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @drinks.each do |drink| %>
+        <tr>
+          <td class="line"><%= drink.name %></td>
+          <td class="line"><%= drink.protein %></td>
+          <td class="line"><%= drink.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>強化食品</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @enriched_foods.each do |enriched_food| %>
+        <tr>
+          <td class="line"><%= enriched_food.name %></td>
+          <td class="line"><%= enriched_food.protein %></td>
+          <td class="line"><%= enriched_food.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+
+    <div class="ingredient-chart">
+      <h2>その他</h2>
+      <table class="line">
+        <tr>
+          <th class="line">Name</th>
+          <th class="line">Protein</th>
+          <th class="line">Calorie</th>
+        </tr>
+      <% @others.each do |other| %>
+        <tr>
+          <td class="line"><%= other.name %></td>
+          <td class="line"><%= other.protein %></td>
+          <td class="line"><%= other.calorie %></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
+    
+  </div>
+  <% end %>
+</div>
+
