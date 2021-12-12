@@ -2,8 +2,14 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    comment = Comment.create(comment_params)
-    redirect_to "/posts/#{comment.post.id}"
+    @comment = Comment.create(comment_params)
+    if @comment.save
+      redirect_to "/posts/#{@comment.post.id}"
+    else
+      @post = @comment.post
+      @comments = @post.comments
+      render "/posts/show"
+    end
   end
 
   private
