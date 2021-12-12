@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :image
 
-  validates :content, presence: true, unless: :was_attached?
+  validates :content, presence: { message: "or Image can't be blank"}, unless: :was_attached?
 
   def was_attached?
     self.image.attached?
