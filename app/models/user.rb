@@ -9,6 +9,7 @@ class User < ApplicationRecord
     # validates :gender
     validates :birthday
   end
+  validates :nickname, presence: true, length: { maximum: 6 }
 
   has_many :managements
   has_many :posts
