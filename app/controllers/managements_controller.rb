@@ -45,9 +45,6 @@ class ManagementsController < ApplicationController
       render :new
     end
 
-
-    # Management.create(management_params)
-    # redirect_to root_path
   end
 
   def show
